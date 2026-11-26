@@ -65,7 +65,6 @@ function loadLeaflet() {
 function historicalMap() {
   return `<section class="map-page" aria-labelledby="map-title">
     <header class="map-heading">
-      <a href="#/exhibit">← 返回君王与大事</a>
       <h1 id="map-title">历史地图</h1>
       <p>${historicalLocations.length} 件大事可定位。跨地区事件以有史料支持的代表地点标注。</p>
       <div class="map-episode-entries">

@@ -560,8 +560,7 @@ html[lang="en"] :is(.guide-english:not([lang]),.card-copy .en,.royal-top .brand 
 .guide-title{font-size:clamp(33px,4.5vw,57px);margin:7px 3px 21px}
 
 .map-page{--sea:#1b2925;--map-line:#53604b;width:min(1280px,90%);margin:0 auto;padding:29px 0 35px}
-.map-heading>a{font-size:13px;color:var(--gold)}
-.map-heading>a:hover,.map-event-links a:hover,.map-credit a:hover{text-decoration:underline}
+.map-event-links a:hover,.map-credit a:hover{text-decoration:underline}
 .map-heading h1{font-size:clamp(38px,5vw,62px);margin:10px 0 7px}
 .map-heading p{font-size:14px;color:#b9c2ac;margin-bottom:21px}
 .map-experience{display:grid;grid-template-columns:minmax(0,1fr) minmax(295px,31%);border:1px solid var(--map-line);background:#20291f}

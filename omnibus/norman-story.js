@@ -24,7 +24,6 @@ const normanStoryData = {
   id:'norman-1066',
   title:'1066 诺曼征服',
   intro:'从王位空缺、跨海登陆，到威廉在威斯敏斯特加冕。',
-  back:'#/map/conquest',
   bounds:[[49.93,-2.15],[54.25,2.1]],
   credit:'虚线表示舰队渡海方向。地貌采用现代底图。',
   steps:normanSteps,
@@ -34,10 +33,9 @@ const normanStoryData = {
 };
 
 function mapStory(story) {
-  const {id,title,intro,back,steps,credit} = story;
+  const {id,title,intro,steps,credit} = story;
   return `<section class="map-page norman-story ${id}" aria-labelledby="map-story-title">
     <header class="map-heading">
-      <a href="${back}">← 返回历史地图</a>
       <h1 id="map-story-title">${title}</h1>
       <p>${intro}</p>
     </header>

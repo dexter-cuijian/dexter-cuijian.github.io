@@ -65,7 +65,6 @@ function relationProfile(ruler, figure, house) {
 function relationshipPage(tree) {
   return `<section class="shell relation-page" aria-labelledby="relation-title">
     <header class="relation-header">
-      <a class="back" href="#/exhibit">← 返回君王与大事</a>
       <h1 id="relation-title">君主家谱</h1>
       <p>点击人物查看资料，再点一次收起。父母之间的圆点连到共同子女，虚线标记王位交接。</p>
       <div class="relation-selectors">

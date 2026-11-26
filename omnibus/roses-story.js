@@ -5,7 +5,6 @@ const rosesStory = {
   id:'wars-of-the-roses',
   title:'玫瑰战争与都铎王朝的建立',
   intro:'1455–1486 · 从兰开斯特与约克争夺王位，到亨利七世加冕并与约克的伊丽莎白成婚。',
-  back:'#/map/roses',
   bounds:[[50.55,-5.35],[54.35,.25]],
   markerShifts:{0:16,1:16,3:-16,4:-14,6:16,9:16,10:16},
   familyLinks:true,

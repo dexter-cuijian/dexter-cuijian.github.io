@@ -63,9 +63,9 @@ function monarchCard(person, compare = false, href = routeTo(person)) {
 }
 
 function compareMonarchs(group) {
-  if (!group) return `<section class="shell interior"><a class="back" href="#/exhibit">← 君王与大事</a><h1>同名君王</h1><p>从导航的「同名君王」选择要对照的名字。</p></section>`;
+  if (!group) return `<section class="shell interior"><h1>同名君王</h1><p>从导航的「同名君王」选择要对照的名字。</p></section>`;
   const houseIds = [...new Set(group.members.map(person => person.house))];
-  return `<section class="shell interior"><a class="back" href="#/exhibit">← 君王与大事</a><div class="interior-head"><div><h1>历代${group.name}</h1><p>对照 ${group.members.length} 位同名君王的在位时期及王朝。<a class="pair-entry" href="#/compare/pair">双人对照 ↗</a></p></div>
+  return `<section class="shell interior"><div class="interior-head"><div><h1>历代${group.name}</h1><p>对照 ${group.members.length} 位同名君王的在位时期及王朝。<a class="pair-entry" href="#/compare/pair">双人对照 ↗</a></p></div>
     <label class="filter">王朝 <select id="compare-filter" aria-label="筛选对照王朝"><option value="">全部王朝</option>${houseIds.map(index => `<option value="${index}">${houses[index][1]}</option>`).join('')}</select></label></div>
     <div class="comparison" id="comparison">${group.members.map(person => `<div data-dynasty="${person.house}">${monarchCard(person, true)}</div>`).join('')}</div></section>`;
 }
@@ -85,7 +85,7 @@ function pairComparison(leftId,rightId) {
   const left = people.get(leftId) || people.get('henry-viii');
   const right = people.get(rightId) || people.get('elizabeth-i');
   const choices = (name,selected) => `<label>${name}<select aria-label="${name}">${monarchs.map(person=>`<option value="${person.id}" ${person===selected?'selected':''}>${person.cn} · ${person.reign}</option>`).join('')}</select></label>`;
-  return `<section class="shell interior"><a class="back" href="#/exhibit">← 君王与大事</a><div class="interior-head"><div><h1>双人对照</h1><p>任选两位君王，并排查看在位时期、生平和主要事迹。</p></div></div>
+  return `<section class="shell interior"><div class="interior-head"><div><h1>双人对照</h1><p>任选两位君王，并排查看在位时期、生平和主要事迹。</p></div></div>
     <div class="pair-controls" data-pair>${choices('左侧君王',left)}${choices('右侧君王',right)}</div>
     <div class="pair-result">${pairCards(left,right)}</div>
   </section>`;
@@ -95,7 +95,6 @@ function gallery(id) {
   const selected = exhibits.find(person => person.id === id);
   const exhibitHouses = [...new Set(exhibits.map(person => person.house))];
   return `<section class="shell interior portrait-index">
-    <a class="back" href="#/exhibit">← 君王与大事</a>
     <div class="interior-head"><div><h1>肖像索引</h1><p>按时期或王朝查找历史图像，点开即可回到这位君王的时间线。</p></div>
     <label class="filter">王朝 <select id="portrait-filter" aria-label="筛选肖像王朝"><option value="">全部时期与王朝</option>${exhibitHouses.map(index => `<option value="${index}">${houses[index][1]}</option>`).join('')}</select></label></div>
     <div class="comparison">${exhibits.map(person => `<div data-dynasty="${person.house}" id="portrait-${person.id}" ${person === selected ? 'class="is-target"' : ''}>${monarchCard(person, false, guideLink(person))}</div>`).join('')}</div>
@@ -107,7 +106,6 @@ function walk(id) {
   const back = exhibit ? guideLink(exhibit) : '#/exhibit';
   main.innerHTML = `<section class="museum" aria-label="3D 君王展厅">
     <div class="museum-header">
-      <a class="back" href="${back}">← 君王与大事</a>
       <button class="museum-exit" type="button" hidden>收起全景 <span aria-hidden="true">↙</span></button>
       <label class="museum-index">前往展品 <select aria-label="前往展品">
         <option value="">选择君王</option>${exhibits.map(person => `<option value="${person.id}">${person.cn}</option>`).join('')}
