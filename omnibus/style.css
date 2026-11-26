@@ -20,13 +20,22 @@ h1,h2,h3{font-family:var(--serif);line-height:1.15}
 .tabs>a{height:100%;display:grid;align-items:center;color:var(--muted);position:relative;font-size:14px;white-space:nowrap}
 .tabs>a:hover,.tabs>a[aria-current]{color:var(--ink)}
 .tabs>a[aria-current]::after{position:absolute;content:"";bottom:-1px;left:0;right:0;height:2px;background:var(--gold)}
+.royal-sections{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0 24px;border-top:1px solid var(--line)}
+.royal-sections a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 4px;color:var(--muted);font-size:13px;text-align:center}
+.royal-sections a:hover,.royal-sections a[aria-current=page]{color:var(--gold)}
+.royal-sections a[aria-current=page]{box-shadow:inset 0 -2px var(--gold)}
+.royal-sections a:focus-visible{outline-offset:-2px}
+@media(max-width:720px){
+  .royal-sections{gap:0 6px}
+  .royal-sections a{flex:1 0 min(88px,18%);font-size:12px;line-height:1.25}
+}
 .searchbox{width:min(263px,100%);justify-self:end;position:relative}
 .searchbox label{position:absolute;left:12px;top:11px;color:var(--gold);display:block;width:20px;height:20px}
 .searchbox svg{width:100%;height:100%}
 input,select{border:1px solid #453b30;background:#1d1a16;color:var(--ink);font:inherit;border-radius:3px;min-height:44px}
 input{width:100%;padding:8px 10px 8px 38px}
 input::placeholder{color:var(--muted)}
-#results{position:absolute;top:calc(100% + 8px);right:0;width:max(100%,255px);background:#241f19;border:1px solid #614f35;box-shadow:0 12px 30px #0007}
+#results{position:absolute;z-index:3;top:calc(100% + 8px);right:0;width:max(100%,255px);background:#241f19;border:1px solid #614f35;box-shadow:0 12px 30px #0007}
 #results a,#results p{display:block;padding:12px 14px}
 #results a:hover,#results a:focus-visible{background:#382c1d}
 #results small{display:block;color:var(--gold)}
@@ -180,7 +189,7 @@ footer .brand img{width:33px;height:33px}
 }
 
 .exhibition{
-  --guide-top:75px;
+  --guide-top:var(--royal-header-height,75px);
   --guide-gold:#bfa573;
   background:#131915;
   color:#eee7d7;
@@ -222,7 +231,7 @@ footer .brand img{width:33px;height:33px}
 .guide-event p{color:#c9c0ab;font-size:14px}
 .guide-event>.guide-source{min-height:28px}
 @media(max-width:720px){
-  .exhibition{--guide-top:102px}
+  .exhibition{--guide-top:var(--royal-header-height,102px)}
   .guide-nav>div{padding:2px 10px}
   .guide-nav button{font-size:12px;padding-inline:8px}
   .guide-line{padding:0 13px 26px}
@@ -288,10 +297,6 @@ footer .brand img{width:33px;height:33px}
 .guide-nav button{width:100%;justify-content:start;text-align:left;border:0;border-left:1px solid transparent;padding:5px 8px;gap:7px}
 .guide-nav button[aria-current]{background:#2a3226;border-left-color:var(--gold)}
 .guide-nav button small{display:block;color:var(--muted);font:12px var(--latin);margin-top:2px}
-.guide-visits{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
-.guide-visits a{display:inline-flex;align-items:center;min-height:44px;padding:0 11px;border:1px solid var(--control-line);border-radius:6px;color:var(--gold);background:var(--surface-raised);font-size:13px}
-.guide-visits a:hover,.guide-visits a:focus-visible{color:var(--ink);background:var(--surface-active);border-color:var(--gold)}
-
 .guide-tools{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 3px 12px;border-bottom:1px solid var(--line)}
 .guide-tools>div{display:flex;gap:4px}
 .guide-tools button{color:var(--muted);font:inherit;font-size:13px;border:1px solid transparent;background:none;padding:0 11px;min-height:44px;white-space:nowrap;cursor:pointer}
@@ -348,7 +353,6 @@ html:has(#guide-detail[open]){overflow:hidden}
   .guide-nav button{width:auto;min-height:44px;gap:4px;border:0;border-bottom:1px solid transparent}
   .guide-nav button[aria-current]{border-left:0;border-bottom-color:var(--gold)}
   .guide-rail-title,.guide-nav button small{display:none}
-  .guide-visits a{padding-inline:7px;font-size:12px}
   .guide-line{padding:10px 16px 30px}
   .guide-house,.guide-person,.guide-event{scroll-margin-top:calc(var(--guide-top) + 92px)}
 }

@@ -269,13 +269,6 @@ function exhibition() {
       </aside>
       <div class="guide-line">
       <h1 id="guide-main-title" class="guide-title">君王与大事</h1>
-      <nav class="guide-visits" aria-label="专题快捷入口">
-        <a href="#/map">历史地图</a>
-        <a href="#/map/wars-of-the-roses">玫瑰战争</a>
-        <a href="#/relations">人物关系</a>
-        <a href="#/gallery">肖像索引</a>
-        <a href="#/walk">3D 展厅</a>
-      </nav>
       <div class="guide-tools">
         <div role="group" aria-label="时间线筛选"><button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="events" aria-pressed="false">只看大事</button></div>
         <div role="group" aria-label="时间线密度"><button type="button" data-density="standard" aria-pressed="true">阅读模式</button><button type="button" data-density="compact" aria-pressed="false">年代概览</button></div>

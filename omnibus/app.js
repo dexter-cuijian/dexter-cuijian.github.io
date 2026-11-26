@@ -1,4 +1,10 @@
 const main = document.querySelector('main');
+const royalHeader = document.querySelector('.royal-top');
+const royalSections = [...royalHeader.querySelectorAll('.royal-sections a')];
+
+function measureRoyalHeader() {
+  if (royalHeader.offsetHeight) main.style.setProperty('--royal-header-height',royalHeader.offsetHeight + 'px');
+}
 const search = document.querySelector('#search');
 const results = document.querySelector('#results');
 const people = new Map(monarchs.map(person => [person.id, person]));
@@ -378,13 +384,20 @@ function render() {
       const controller = new AbortController();
       cleanupPage = () => controller.abort();
       main.innerHTML = exhibition();
+      measureRoyalHeader();
       mountedGuide = mountExhibition(main.firstElementChild,controller.signal);
     }
   }
   hideSearch(true);
   showCompareMenu(false);
-  const activeTab = route.view === 'compare' ? 'compare' : 'gallery';
+  const activeTab = {exhibit:'gallery',compare:'compare'}[route.view];
   document.querySelectorAll('[data-tab]').forEach(item => item.dataset.tab === activeTab ? item.setAttribute('aria-current','page') : item.removeAttribute('aria-current'));
+  const activeSection = route.view === 'map-story'
+    ? (route.id === rosesStory.id ? 'map/' + route.id : 'map')
+    : route.view;
+  royalSections.forEach(link => link.hash === '#/' + activeSection
+    ? link.setAttribute('aria-current','page')
+    : link.removeAttribute('aria-current'));
   if (restore) {
     window.scrollTo(0,restore.y);
     restore.link.focus({preventScroll:true});
@@ -558,6 +571,7 @@ document.querySelector('.skip').addEventListener('click', event => {
   event.preventDefault();
   main.focus();
 });
+new ResizeObserver(measureRoyalHeader).observe(royalHeader);
 window.addEventListener('hashchange', render);
 render();
 mountSiteLanguage();
