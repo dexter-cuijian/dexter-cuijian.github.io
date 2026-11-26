@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#121915">
+<title>万象志</title>
+<link rel="icon" href="assets/crown.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script defer src="locale.js"></script>
+<script defer src="assets/credits.js"></script>
+<script defer src="pre-1066.js"></script>
+<script defer src="history.js"></script>
+<script defer src="biographies.js"></script>
+<script defer src="research.js"></script>
+<script defer src="carousel-palettes.js"></script>
+<script defer src="exhibition.js"></script>
+<script defer src="map-territories.js"></script>
+<script defer src="map-episode.js"></script>
+<script defer src="historical-map.js"></script>
+<script defer src="norman-story.js"></script>
+<script defer src="roses-story.js"></script>
+<script defer src="relationship-data.js"></script>
+<script defer src="relation-tree.js"></script>
+<script defer src="relationships.js"></script>
+<script defer src="macondo-biographies.js"></script>
+<script defer src="macondo.js"></script>
+<script defer src="macondo-stories.js"></script>
+<script defer src="translations-chronicle.js"></script>
+<script defer src="translations-maps.js"></script>
+<script defer src="translations-macondo.js"></script>
+<script defer src="translations-ui.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<nav class="site-language" aria-label="语言">
+  <button type="button" data-site-language="zh-CN" lang="zh-CN" aria-pressed="true" data-keep-language>中文</button>
+  <button type="button" data-site-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+</nav>
+<header class="top royal-top">
+  <div class="top-inner">
+    <a class="brand" href="#/" aria-label="王冠纪年首页"><img src="assets/crown.svg" alt=""><span>王冠纪年<small>CROWN CHRONICLE</small></span></a>
+    <nav class="tabs" aria-label="主导航">
+      <a data-tab="gallery" href="#/exhibit">君王与大事</a>
+      <div class="compare-nav">
+        <button type="button" data-tab="compare" aria-expanded="false" aria-controls="compare-menu">同名君王 <span class="compare-chevron" aria-hidden="true"></span></button>
+        <ul id="compare-menu" hidden></ul>
+      </div>
+    </nav>
+    <div class="searchbox"><label for="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.1"/><path d="m15.4 15.4 4 4"/></svg></label><input id="search" role="combobox" placeholder="搜索君王、王朝、事件" autocomplete="off" aria-label="搜索君王、王朝、事件" aria-autocomplete="list" aria-controls="results" aria-expanded="false"><div id="results" role="listbox" aria-label="搜索结果" hidden></div></div>
+  </div>
+</header>
+<header class="top macondo-top" aria-label="百年孤独页头">
+  <div class="top-inner">
+    <a class="macondo-masthead" href="#/">
+      百年孤独 <small lang="es">Cien años de soledad</small>
+    </a>
+    <nav aria-label="百年孤独专题导航">
+      <a href="#/macondo/section/tree">人物家谱</a>
+      <a href="#/macondo/section/stories">关系导读</a>
+      <a href="#/macondo/section/names">同名速查</a>
+      <a href="#/macondo/section/events">马孔多大事</a>
+      <a href="#/macondo/section/generations">七代导读</a>
+      <a href="#/macondo/section/background">作品背景</a>
+    </nav>
+    <a class="macondo-home" href="#/">← 返回首页</a>
+  </div>
+</header>
+<main id="main" tabindex="-1"></main>
+<dialog id="guide-detail" aria-labelledby="sheet-title">
+  <div class="sheet-top"><span>时间线资料</span><button data-close-detail type="button" aria-label="关闭资料">×</button></div>
+  <div class="sheet-body"></div>
+</dialog>
+<footer><div><a class="brand royal-footer-brand" href="#/"><img src="assets/crown.svg" alt=""><span>王冠纪年</span></a><a class="macondo-footer-home" href="#/">← 返回首页</a></div></footer>
+</body>
+</html>
