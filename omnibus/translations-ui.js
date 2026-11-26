@@ -1,4 +1,6 @@
 registerSiteTranslations({
+  '专题快捷入口':'Topic shortcuts',
+  '3D 展厅':'3D gallery',
   '王冠纪年':'Crown Chronicle',
   '王冠纪年首页':'Crown Chronicle home',
   '王冠纪年 · 英国君王图谱':'Crown Chronicle · British Monarchs',

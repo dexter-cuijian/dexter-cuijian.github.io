@@ -288,9 +288,10 @@ footer .brand img{width:33px;height:33px}
 .guide-nav button{width:100%;justify-content:start;text-align:left;border:0;border-left:1px solid transparent;padding:5px 8px;gap:7px}
 .guide-nav button[aria-current]{background:#2a3226;border-left-color:var(--gold)}
 .guide-nav button small{display:block;color:var(--muted);font:12px var(--latin);margin-top:2px}
-.guide-visits{display:flex;flex-wrap:wrap;gap:7px;border-top:1px solid var(--line);padding:4px 0}
-.guide-visits a{display:flex;align-items:center;min-height:44px;padding:0 6px;color:#d0ba92;font-size:12px}
-.guide-visits a:hover{color:#f2d4a2;text-decoration:underline}
+.guide-visits{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.guide-visits a{display:inline-flex;align-items:center;min-height:44px;padding:0 11px;border:1px solid var(--control-line);border-radius:6px;color:var(--gold);background:var(--surface-raised);font-size:13px}
+.guide-visits a:hover,.guide-visits a:focus-visible{color:var(--ink);background:var(--surface-active);border-color:var(--gold)}
+
 .guide-tools{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 3px 12px;border-bottom:1px solid var(--line)}
 .guide-tools>div{display:flex;gap:4px}
 .guide-tools button{color:var(--muted);font:inherit;font-size:13px;border:1px solid transparent;background:none;padding:0 11px;min-height:44px;white-space:nowrap;cursor:pointer}
@@ -347,8 +348,7 @@ html:has(#guide-detail[open]){overflow:hidden}
   .guide-nav button{width:auto;min-height:44px;gap:4px;border:0;border-bottom:1px solid transparent}
   .guide-nav button[aria-current]{border-left:0;border-bottom-color:var(--gold)}
   .guide-rail-title,.guide-nav button small{display:none}
-  .guide-visits{padding:0 10px;gap:4px;border-top:0}
-  .guide-visits a{font-size:11px;min-height:28px}
+  .guide-visits a{padding-inline:7px;font-size:12px}
   .guide-line{padding:10px 16px 30px}
   .guide-house,.guide-person,.guide-event{scroll-margin-top:calc(var(--guide-top) + 92px)}
 }
@@ -554,7 +554,6 @@ html[lang="en"] .cover :is(h1,h2){font-size:clamp(38px,5vw,79px);letter-spacing:
 }
 html[lang="en"] :is(.guide-english:not([lang]),.card-copy .en,.royal-top .brand small){display:none}
 .guide-title{font-size:clamp(33px,4.5vw,57px);margin:7px 3px 21px}
-.guide-visits a:first-child{color:#ecd0a2;font-weight:650}
 
 .map-page{--sea:#1b2925;--map-line:#53604b;width:min(1280px,90%);margin:0 auto;padding:29px 0 35px}
 .map-heading>a{font-size:13px;color:var(--gold)}
@@ -948,7 +947,6 @@ body:has(.tree-fullscreen){overflow:hidden}
 .guide-compact .guide-image .empty small{font-size:9px;line-height:1.15;white-space:nowrap}
 .guide-compact .guide-copy{min-width:0;overflow-wrap:anywhere}
 .guide-compact .guide-person{gap:12px}
-@media(max-width:900px){.guide-visits a{padding-inline:3px}}
 
 .source-note{min-width:0;max-width:100%;color:#d1bd97;font-size:12px;line-height:1.5}
 .source-note summary{width:fit-content;max-width:100%;cursor:pointer;overflow-wrap:anywhere}
@@ -1033,7 +1031,7 @@ body[data-page] :is(.sheet-sections section,.sheet-actions,.sheet-reconstruction
 body[data-page] :is(.guide-house,.guide-house-head,.guide-person,.guide-event){
   border-color:var(--line);
 }
-body[data-page] :is(.guide-rail-title,.guide-date,.guide-visits a,.guide-expand,.guide-research summary,.macondo-masthead small,.macondo-home,.macondo-footer-home){
+body[data-page] :is(.guide-rail-title,.guide-date,.guide-expand,.guide-research summary,.macondo-masthead small,.macondo-home,.macondo-footer-home){
   color:var(--gold);
 }
 body[data-page] :is(.guide-house-head,.guide-event,.guide-person)::before{
