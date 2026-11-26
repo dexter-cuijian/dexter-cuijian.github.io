@@ -559,7 +559,13 @@ html[lang="en"] .cover :is(h1,h2){font-size:clamp(38px,5vw,79px);letter-spacing:
 html[lang="en"] :is(.guide-english:not([lang]),.card-copy .en,.royal-top .brand small){display:none}
 .guide-title{font-size:clamp(33px,4.5vw,57px);margin:7px 3px 21px}
 
-.map-page{--sea:#1b2925;--map-line:#53604b;width:min(1280px,90%);margin:0 auto;padding:29px 0 35px}
+.map-page{--sea:#1b2925;--map-line:#53604b;width:min(1280px,90%);margin:0 auto;padding:29px 0 18px}
+body[data-page="map-story"]{min-height:100dvh;display:flex;flex-direction:column}
+body[data-page="map-story"]>.top{flex:none}
+body[data-page="map-story"]>main{display:flex;flex:1}
+body:is([data-page="map-story"],[data-page="map"])>footer>div{padding-block:10px}
+.norman-story{display:flex;flex-direction:column}
+.norman-story .map-experience{flex:1;grid-template-rows:minmax(auto,1fr) auto}
 .map-event-links a:hover,.map-credit a:hover{text-decoration:underline}
 .map-heading h1{font-size:clamp(38px,5vw,62px);margin:10px 0 7px}
 .map-heading p{font-size:14px;color:#b9c2ac;margin-bottom:21px}
@@ -727,6 +733,7 @@ html[lang="en"] :is(.guide-english:not([lang]),.card-copy .en,.royal-top .brand 
 .norman-pin.is-active{color:#25291f;background:#e6bd7f;outline:2px solid #f4dfb5;outline-offset:1px}
 .norman-pin:focus-visible{outline:2px solid white;outline-offset:2px}
 @media(max-width:700px){
+ .norman-story .map-experience{grid-template-rows:minmax(auto,1fr) auto auto}
  .norman-story .map-stage{min-height:clamp(300px,68vw,390px)}
  .norman-stops{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(101px,max-content)}
  .norman-stops button strong{font-size:12px}
